@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/fetch_data.yml", "tools/prepare_data.py"]
+    paths: [".github/workflows/fetch_data.yml", "tools/prepare_data.py", "tools/download.py"]
 
 permissions:
   contents: write
@@ -24,42 +24,12 @@ jobs:
       - run: pip install pandas numpy
       - name: Download CU-BEMS (figshare 11726517)
         run: |
-          sudo apt-get install -y -q aria2
-          mkdir -p raw
-          cat > urls.txt <<'LIST'
-          https://ndownloader.figshare.com/files/21350142
-            out=2018Floor1.csv
-          https://ndownloader.figshare.com/files/21350166
-            out=2018Floor2.csv
-          https://ndownloader.figshare.com/files/21350151
-            out=2018Floor3.csv
-          https://ndownloader.figshare.com/files/21350157
-            out=2018Floor4.csv
-          https://ndownloader.figshare.com/files/21350148
-            out=2018Floor5.csv
-          https://ndownloader.figshare.com/files/21350154
-            out=2018Floor6.csv
-          https://ndownloader.figshare.com/files/21350145
-            out=2018Floor7.csv
-          https://ndownloader.figshare.com/files/21350208
-            out=2019Floor1.csv
-          https://ndownloader.figshare.com/files/21350226
-            out=2019Floor2.csv
-          https://ndownloader.figshare.com/files/21350193
-            out=2019Floor3.csv
-          https://ndownloader.figshare.com/files/21350172
-            out=2019Floor4.csv
-          https://ndownloader.figshare.com/files/21350205
-            out=2019Floor5.csv
-          https://ndownloader.figshare.com/files/21350169
-            out=2019Floor6.csv
-          https://ndownloader.figshare.com/files/21350217
-            out=2019Floor7.csv
-          LIST
-          aria2c -i urls.txt -d raw -j 7 -x 4 --max-tries=10 --retry-wait=10 --console-log-level=warn
-          ls -l raw
-      - run: python tools/prepare_data.py raw data
+          mkdir -p raw data
+          python tools/download.py raw 2>&1 | tee data/download_log.txt
+      - run: python tools/prepare_data.py raw data 2>&1 | tee -a data/download_log.txt
+        if: always()
       - name: Commit data
+        if: always()
         run: |
           git config user.name "Malmand"
           git config user.email "201303087+Malmand@users.noreply.github.com"
