@@ -1,0 +1,1346 @@
+{
+ "Floor1_z1_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 55,
+  "min": 0.0,
+  "max": 134.97,
+  "share_missing": 0.003
+ },
+ "Floor1_z1_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 39,
+  "min": 0.0,
+  "max": 57.86,
+  "share_missing": 0.0014
+ },
+ "Floor1_z2_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 193,
+  "min": 0.0,
+  "max": 131.55,
+  "share_missing": 0.0029
+ },
+ "Floor1_z2_AC2(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 291,
+  "min": 0.0,
+  "max": 798.72,
+  "share_missing": 0.0028
+ },
+ "Floor1_z2_AC3(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 349,
+  "min": 0.0,
+  "max": 24.95,
+  "share_missing": 0.0028
+ },
+ "Floor1_z2_AC4(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 724,
+  "min": 0.0,
+  "max": 0.06,
+  "share_missing": 0.0028
+ },
+ "Floor1_z2_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 11,
+  "min": 0.0,
+  "max": 55.28,
+  "share_missing": 0.0026
+ },
+ "Floor1_z2_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8,
+  "min": 0.0,
+  "max": 73.68,
+  "share_missing": 0.0386
+ },
+ "Floor1_z3_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 7,
+  "min": 0.0,
+  "max": 4762.43,
+  "share_missing": 0.0014
+ },
+ "Floor1_z3_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 62,
+  "min": 0.0,
+  "max": 22.22,
+  "share_missing": 0.0028
+ },
+ "Floor1_z4_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 10,
+  "min": 0.0,
+  "max": 512.01,
+  "share_missing": 0.0014
+ },
+ "Floor2_z1_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8096,
+  "min": 0.0,
+  "max": 59.61,
+  "share_missing": 0.0383
+ },
+ "Floor2_z1_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 214,
+  "min": 0.0,
+  "max": 22.38,
+  "share_missing": 0.0014
+ },
+ "Floor2_z1_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 704,
+  "min": 0.0,
+  "max": 9.82,
+  "share_missing": 0.0014
+ },
+ "Floor2_z1_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 42,
+  "min": 17.56,
+  "max": 31.9,
+  "share_missing": 0.3474
+ },
+ "Floor2_z1_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 20,
+  "min": 45.5,
+  "max": 76.9,
+  "share_missing": 0.3474
+ },
+ "Floor2_z1_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 999,
+  "min": 0.0,
+  "max": 96.0,
+  "share_missing": 0.3474
+ },
+ "Floor2_z2_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 592,
+  "min": 0.0,
+  "max": 50.72,
+  "share_missing": 0.0385
+ },
+ "Floor2_z2_AC2(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 373,
+  "min": 0.0,
+  "max": 2.43,
+  "share_missing": 0.0033
+ },
+ "Floor2_z2_AC3(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 983,
+  "min": 0.0,
+  "max": 2.08,
+  "share_missing": 0.0033
+ },
+ "Floor2_z2_AC4(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 983,
+  "min": 0.0,
+  "max": 2.04,
+  "share_missing": 0.0033
+ },
+ "Floor2_z2_AC5(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 349,
+  "min": 0.0,
+  "max": 15.76,
+  "share_missing": 0.0014
+ },
+ "Floor2_z2_AC6(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1033,
+  "min": 0.0,
+  "max": 9.04,
+  "share_missing": 0.0014
+ },
+ "Floor2_z2_AC7(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 382,
+  "min": 0.0,
+  "max": 10.34,
+  "share_missing": 0.0014
+ },
+ "Floor2_z2_AC8(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1436,
+  "min": 0.0,
+  "max": 6.46,
+  "share_missing": 0.0014
+ },
+ "Floor2_z2_AC9(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 382,
+  "min": 0.0,
+  "max": 12.0,
+  "share_missing": 0.0014
+ },
+ "Floor2_z2_AC10(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1436,
+  "min": 0.0,
+  "max": 7.42,
+  "share_missing": 0.0014
+ },
+ "Floor2_z2_AC11(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 135414,
+  "min": 0.0,
+  "max": 0.0,
+  "share_missing": 0.0014
+ },
+ "Floor2_z2_AC12(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 126796,
+  "min": 0.0,
+  "max": 1.44,
+  "share_missing": 0.0014
+ },
+ "Floor2_z2_AC13(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 10660,
+  "min": 0.0,
+  "max": 10.3,
+  "share_missing": 0.0014
+ },
+ "Floor2_z2_AC14(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 126796,
+  "min": 0.0,
+  "max": 1.61,
+  "share_missing": 0.0014
+ },
+ "Floor2_z2_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 5468,
+  "min": 0.0,
+  "max": 11.51,
+  "share_missing": 0.0015
+ },
+ "Floor2_z2_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 3014,
+  "min": 0.0,
+  "max": 8.08,
+  "share_missing": 0.0015
+ },
+ "Floor2_z2_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 61,
+  "min": 18.36,
+  "max": 31.9,
+  "share_missing": 0.3293
+ },
+ "Floor2_z2_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 13,
+  "min": 41.81,
+  "max": 88.96,
+  "share_missing": 0.3293
+ },
+ "Floor2_z2_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 1440,
+  "min": 0.0,
+  "max": 138.0,
+  "share_missing": 0.3293
+ },
+ "Floor2_z3_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 378,
+  "min": 0.0,
+  "max": 12.0,
+  "share_missing": 0.0014
+ },
+ "Floor2_z3_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 790,
+  "min": 0.0,
+  "max": 12.63,
+  "share_missing": 0.0014
+ },
+ "Floor2_z3_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 33,
+  "min": 22.51,
+  "max": 32.14,
+  "share_missing": 0.335
+ },
+ "Floor2_z3_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 7,
+  "min": 33.1,
+  "max": 86.8,
+  "share_missing": 0.335
+ },
+ "Floor2_z3_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 766,
+  "min": 0.0,
+  "max": 16.0,
+  "share_missing": 0.335
+ },
+ "Floor2_z4_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8096,
+  "min": 0.0,
+  "max": 55.33,
+  "share_missing": 0.0383
+ },
+ "Floor2_z4_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 5075,
+  "min": 0.0,
+  "max": 3.77,
+  "share_missing": 0.0033
+ },
+ "Floor2_z4_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 86738,
+  "min": 0.0,
+  "max": 0.06,
+  "share_missing": 0.0015
+ },
+ "Floor2_z4_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 17,
+  "min": 16.1,
+  "max": 31.9,
+  "share_missing": 0.4658
+ },
+ "Floor2_z4_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 10,
+  "min": 44.57,
+  "max": 89.81,
+  "share_missing": 0.4658
+ },
+ "Floor2_z4_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 1438,
+  "min": 0.0,
+  "max": 88.0,
+  "share_missing": 0.4658
+ },
+ "Floor3_z1_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 30072,
+  "min": 0.0,
+  "max": 2.35,
+  "share_missing": 0.0897
+ },
+ "Floor3_z1_AC2(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 24475,
+  "min": 0.0,
+  "max": 5.42,
+  "share_missing": 0.0897
+ },
+ "Floor3_z1_AC3(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 31223,
+  "min": 0.0,
+  "max": 2.26,
+  "share_missing": 0.0897
+ },
+ "Floor3_z1_AC4(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 7269,
+  "min": 0.0,
+  "max": 55.95,
+  "share_missing": 0.13
+ },
+ "Floor3_z1_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 2465,
+  "min": 0.0,
+  "max": 162.24,
+  "share_missing": 0.0757
+ },
+ "Floor3_z1_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 2201,
+  "min": 0.0,
+  "max": 35.45,
+  "share_missing": 0.0756
+ },
+ "Floor3_z1_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 57,
+  "min": 17.9,
+  "max": 30.9,
+  "share_missing": 0.3695
+ },
+ "Floor3_z1_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 23,
+  "min": 48.57,
+  "max": 80.62,
+  "share_missing": 0.3695
+ },
+ "Floor3_z1_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 1438,
+  "min": 0.0,
+  "max": 80.0,
+  "share_missing": 0.3695
+ },
+ "Floor3_z2_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8115,
+  "min": 0.0,
+  "max": 59.07,
+  "share_missing": 0.13
+ },
+ "Floor3_z2_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 2282,
+  "min": 0.0,
+  "max": 236.16,
+  "share_missing": 0.0768
+ },
+ "Floor3_z2_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1646,
+  "min": 0.0,
+  "max": 21.42,
+  "share_missing": 0.0756
+ },
+ "Floor3_z2_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 53,
+  "min": 18.92,
+  "max": 30.9,
+  "share_missing": 0.3471
+ },
+ "Floor3_z2_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 23,
+  "min": 45.71,
+  "max": 79.7,
+  "share_missing": 0.3471
+ },
+ "Floor3_z2_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 1439,
+  "min": 0.0,
+  "max": 90.0,
+  "share_missing": 0.3471
+ },
+ "Floor3_z3_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1658,
+  "min": 0.0,
+  "max": 46.97,
+  "share_missing": 0.0756
+ },
+ "Floor3_z3_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 172,
+  "min": 0.0,
+  "max": 27.24,
+  "share_missing": 0.0756
+ },
+ "Floor3_z4_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8115,
+  "min": 0.0,
+  "max": 55.76,
+  "share_missing": 0.13
+ },
+ "Floor3_z4_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 5930,
+  "min": 0.0,
+  "max": 186.08,
+  "share_missing": 0.081
+ },
+ "Floor3_z4_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 3806,
+  "min": 0.0,
+  "max": 51.16,
+  "share_missing": 0.0775
+ },
+ "Floor3_z4_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 47,
+  "min": 15.73,
+  "max": 30.9,
+  "share_missing": 0.3395
+ },
+ "Floor3_z4_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 20,
+  "min": 49.18,
+  "max": 88.29,
+  "share_missing": 0.3395
+ },
+ "Floor3_z4_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 1439,
+  "min": 0.0,
+  "max": 55.0,
+  "share_missing": 0.3395
+ },
+ "Floor3_z5_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8115,
+  "min": 0.0,
+  "max": 56.66,
+  "share_missing": 0.13
+ },
+ "Floor3_z5_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 6437,
+  "min": 0.0,
+  "max": 172.32,
+  "share_missing": 0.081
+ },
+ "Floor3_z5_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1869,
+  "min": 0.0,
+  "max": 68.75,
+  "share_missing": 0.0757
+ },
+ "Floor3_z5_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 61,
+  "min": 17.91,
+  "max": 30.9,
+  "share_missing": 0.4394
+ },
+ "Floor3_z5_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 24,
+  "min": 46.14,
+  "max": 93.67,
+  "share_missing": 0.4394
+ },
+ "Floor3_z5_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 803,
+  "min": 0.0,
+  "max": 77.0,
+  "share_missing": 0.4394
+ },
+ "Floor4_z1_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 102735,
+  "min": 0.0,
+  "max": 22.29,
+  "share_missing": 0.2134
+ },
+ "Floor4_z1_AC2(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 17230,
+  "min": 0.0,
+  "max": 20.28,
+  "share_missing": 0.2134
+ },
+ "Floor4_z1_AC3(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 94083,
+  "min": 0.0,
+  "max": 9.91,
+  "share_missing": 0.2134
+ },
+ "Floor4_z1_AC4(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8113,
+  "min": 0.0,
+  "max": 51.69,
+  "share_missing": 0.0493
+ },
+ "Floor4_z1_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 283,
+  "min": 0.0,
+  "max": 63.11,
+  "share_missing": 0.1049
+ },
+ "Floor4_z1_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 551,
+  "min": 0.0,
+  "max": 87.11,
+  "share_missing": 0.043
+ },
+ "Floor4_z1_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 60,
+  "min": 17.96,
+  "max": 31.9,
+  "share_missing": 0.3345
+ },
+ "Floor4_z1_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 43,
+  "min": 45.12,
+  "max": 78.8,
+  "share_missing": 0.3345
+ },
+ "Floor4_z1_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 688,
+  "min": 0.0,
+  "max": 87.0,
+  "share_missing": 0.3345
+ },
+ "Floor4_z2_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8113,
+  "min": 0.0,
+  "max": 58.4,
+  "share_missing": 0.0493
+ },
+ "Floor4_z2_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 6065,
+  "min": 0.0,
+  "max": 32.59,
+  "share_missing": 0.1049
+ },
+ "Floor4_z2_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 92,
+  "min": 0.0,
+  "max": 4.77,
+  "share_missing": 0.1049
+ },
+ "Floor4_z2_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 64,
+  "min": 17.59,
+  "max": 30.6,
+  "share_missing": 0.3435
+ },
+ "Floor4_z2_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 27,
+  "min": 50.7,
+  "max": 81.11,
+  "share_missing": 0.3435
+ },
+ "Floor4_z2_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 754,
+  "min": 0.0,
+  "max": 85.0,
+  "share_missing": 0.3435
+ },
+ "Floor4_z3_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1768,
+  "min": 0.0,
+  "max": 8.55,
+  "share_missing": 0.0431
+ },
+ "Floor4_z3_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 403,
+  "min": 0.0,
+  "max": 3.14,
+  "share_missing": 0.0431
+ },
+ "Floor4_z4_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8113,
+  "min": 0.0,
+  "max": 51.75,
+  "share_missing": 0.0493
+ },
+ "Floor4_z4_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 5957,
+  "min": 0.0,
+  "max": 26.7,
+  "share_missing": 0.0459
+ },
+ "Floor4_z4_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1031,
+  "min": 0.0,
+  "max": 9.52,
+  "share_missing": 0.0443
+ },
+ "Floor4_z4_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 57,
+  "min": 16.19,
+  "max": 30.99,
+  "share_missing": 0.4468
+ },
+ "Floor4_z4_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 24,
+  "min": 47.92,
+  "max": 85.3,
+  "share_missing": 0.4468
+ },
+ "Floor4_z4_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 818,
+  "min": 0.0,
+  "max": 111.0,
+  "share_missing": 0.4468
+ },
+ "Floor4_z5_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8050,
+  "min": 0.0,
+  "max": 56.46,
+  "share_missing": 0.0493
+ },
+ "Floor4_z5_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 6064,
+  "min": 0.0,
+  "max": 58.61,
+  "share_missing": 0.0459
+ },
+ "Floor4_z5_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 141,
+  "min": 0.0,
+  "max": 3.14,
+  "share_missing": 0.0431
+ },
+ "Floor4_z5_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 61,
+  "min": 19.1,
+  "max": 30.9,
+  "share_missing": 0.3387
+ },
+ "Floor4_z5_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 31,
+  "min": 44.91,
+  "max": 84.81,
+  "share_missing": 0.3387
+ },
+ "Floor4_z5_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 1439,
+  "min": 0.0,
+  "max": 87.0,
+  "share_missing": 0.3387
+ },
+ "Floor5_z1_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 79533,
+  "min": 0.0,
+  "max": 1.22,
+  "share_missing": 0.0172
+ },
+ "Floor5_z1_AC2(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 58598,
+  "min": 0.0,
+  "max": 1.95,
+  "share_missing": 0.0172
+ },
+ "Floor5_z1_AC3(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 23933,
+  "min": 0.0,
+  "max": 3.2,
+  "share_missing": 0.0172
+ },
+ "Floor5_z1_AC4(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8118,
+  "min": 0.0,
+  "max": 59.44,
+  "share_missing": 0.0495
+ },
+ "Floor5_z1_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 2366,
+  "min": 0.0,
+  "max": 76.78,
+  "share_missing": 0.0102
+ },
+ "Floor5_z1_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 76,
+  "min": 0.0,
+  "max": 97.08,
+  "share_missing": 0.0092
+ },
+ "Floor5_z1_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 62,
+  "min": 10.83,
+  "max": 30.9,
+  "share_missing": 0.4168
+ },
+ "Floor5_z1_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 20,
+  "min": 46.55,
+  "max": 91.74,
+  "share_missing": 0.4168
+ },
+ "Floor5_z1_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 818,
+  "min": 0.0,
+  "max": 68.0,
+  "share_missing": 0.4168
+ },
+ "Floor5_z2_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8118,
+  "min": 0.0,
+  "max": 58.17,
+  "share_missing": 0.0494
+ },
+ "Floor5_z2_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 2782,
+  "min": 0.0,
+  "max": 55.99,
+  "share_missing": 0.0373
+ },
+ "Floor5_z2_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 4753,
+  "min": 0.0,
+  "max": 5.43,
+  "share_missing": 0.0373
+ },
+ "Floor5_z2_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 59,
+  "min": 18.63,
+  "max": 30.5,
+  "share_missing": 0.4909
+ },
+ "Floor5_z2_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 21,
+  "min": 43.73,
+  "max": 81.9,
+  "share_missing": 0.4909
+ },
+ "Floor5_z2_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 1439,
+  "min": 0.0,
+  "max": 49.0,
+  "share_missing": 0.4909
+ },
+ "Floor5_z3_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 71,
+  "min": 0.0,
+  "max": 3.16,
+  "share_missing": 0.0112
+ },
+ "Floor5_z3_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1218,
+  "min": 0.0,
+  "max": 0.85,
+  "share_missing": 0.0091
+ },
+ "Floor5_z4_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8118,
+  "min": 0.0,
+  "max": 58.33,
+  "share_missing": 0.0492
+ },
+ "Floor5_z4_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 3263,
+  "min": 0.0,
+  "max": 27.91,
+  "share_missing": 0.0221
+ },
+ "Floor5_z4_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 69,
+  "min": 0.0,
+  "max": 16.33,
+  "share_missing": 0.009
+ },
+ "Floor5_z4_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 55,
+  "min": 17.51,
+  "max": 30.9,
+  "share_missing": 0.3706
+ },
+ "Floor5_z4_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 23,
+  "min": 48.86,
+  "max": 81.98,
+  "share_missing": 0.3706
+ },
+ "Floor5_z4_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 803,
+  "min": 0.0,
+  "max": 79.0,
+  "share_missing": 0.3706
+ },
+ "Floor5_z5_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8118,
+  "min": 0.0,
+  "max": 56.24,
+  "share_missing": 0.0493
+ },
+ "Floor5_z5_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 3724,
+  "min": 0.0,
+  "max": 22.55,
+  "share_missing": 0.0221
+ },
+ "Floor5_z5_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 4711,
+  "min": 0.0,
+  "max": 3.41,
+  "share_missing": 0.0149
+ },
+ "Floor5_z5_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 66,
+  "min": 19.22,
+  "max": 30.9,
+  "share_missing": 0.3369
+ },
+ "Floor5_z5_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 24,
+  "min": 48.89,
+  "max": 83.41,
+  "share_missing": 0.3369
+ },
+ "Floor5_z5_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 555,
+  "min": 0.0,
+  "max": 54.0,
+  "share_missing": 0.3369
+ },
+ "Floor6_z1_AC1(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 8114,
+  "min": 0.0,
+  "max": 51.33,
+  "share_missing": 0.0025
+ },
+ "Floor6_z1_Light(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 7119,
+  "min": 0.0,
+  "max": 18.35,
+  "share_missing": 0.0026
+ },
+ "Floor6_z1_Plug(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 56,
+  "min": 0.0,
+  "max": 6.1,
+  "share_missing": 0.0027
+ },
+ "Floor6_z1_S1(degC)": {
+  "rows": 689760,
+  "longest_constant_min": 71,
+  "min": 18.38,
+  "max": 32.9,
+  "share_missing": 0.3962
+ },
+ "Floor6_z1_S1(RH%)": {
+  "rows": 689760,
+  "longest_constant_min": 34,
+  "min": 44.75,
+  "max": 86.9,
+  "share_missing": 0.3962
+ },
+ "Floor6_z1_S1(lux)": {
+  "rows": 689760,
+  "longest_constant_min": 786,
+  "min": 0.0,
+  "max": 85.0,
+  "share_missing": 0.3962
+ },
+ "Floor6_z2_AC1(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 6885,
+  "min": 0.0,
+  "max": 58.41,
+  "share_missing": 0.0025
+ },
+ "Floor6_z2_Light(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 1784,
+  "min": 0.0,
+  "max": 32.48,
+  "share_missing": 0.0026
+ },
+ "Floor6_z2_Plug(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 138,
+  "min": 0.0,
+  "max": 9.39,
+  "share_missing": 0.0024
+ },
+ "Floor6_z2_S1(degC)": {
+  "rows": 689760,
+  "longest_constant_min": 69,
+  "min": 18.15,
+  "max": 32.7,
+  "share_missing": 0.4227
+ },
+ "Floor6_z2_S1(RH%)": {
+  "rows": 689760,
+  "longest_constant_min": 25,
+  "min": 46.89,
+  "max": 85.9,
+  "share_missing": 0.4227
+ },
+ "Floor6_z2_S1(lux)": {
+  "rows": 689760,
+  "longest_constant_min": 841,
+  "min": 0.0,
+  "max": 78.0,
+  "share_missing": 0.4227
+ },
+ "Floor6_z3_Light(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 1182,
+  "min": 0.0,
+  "max": 8.36,
+  "share_missing": 0.0024
+ },
+ "Floor6_z3_Plug(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 725,
+  "min": 0.0,
+  "max": 10.75,
+  "share_missing": 0.0024
+ },
+ "Floor6_z4_AC1(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 39534,
+  "min": 0.0,
+  "max": 1.86,
+  "share_missing": 0.0052
+ },
+ "Floor6_z4_AC2(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 17742,
+  "min": 0.0,
+  "max": 11.56,
+  "share_missing": 0.0052
+ },
+ "Floor6_z4_AC3(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 39809,
+  "min": 0.0,
+  "max": 5.98,
+  "share_missing": 0.0052
+ },
+ "Floor6_z4_AC4(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 8114,
+  "min": 0.0,
+  "max": 59.55,
+  "share_missing": 0.0025
+ },
+ "Floor6_z4_Light(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 3565,
+  "min": 0.0,
+  "max": 22.99,
+  "share_missing": 0.0039
+ },
+ "Floor6_z4_Plug(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 60,
+  "min": 0.0,
+  "max": 8.01,
+  "share_missing": 0.0024
+ },
+ "Floor6_z4_S1(degC)": {
+  "rows": 689760,
+  "longest_constant_min": 66,
+  "min": 17.9,
+  "max": 32.1,
+  "share_missing": 0.3755
+ },
+ "Floor6_z4_S1(RH%)": {
+  "rows": 689760,
+  "longest_constant_min": 25,
+  "min": 44.14,
+  "max": 81.44,
+  "share_missing": 0.3755
+ },
+ "Floor6_z4_S1(lux)": {
+  "rows": 689760,
+  "longest_constant_min": 940,
+  "min": 0.0,
+  "max": 53.0,
+  "share_missing": 0.3755
+ },
+ "Floor6_z5_AC1(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 8114,
+  "min": 0.0,
+  "max": 47.77,
+  "share_missing": 0.0025
+ },
+ "Floor6_z5_Light(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 3882,
+  "min": 0.0,
+  "max": 13.53,
+  "share_missing": 0.0048
+ },
+ "Floor6_z5_Plug(kW)": {
+  "rows": 689760,
+  "longest_constant_min": 178,
+  "min": 0.0,
+  "max": 3.68,
+  "share_missing": 0.0039
+ },
+ "Floor6_z5_S1(degC)": {
+  "rows": 689760,
+  "longest_constant_min": 80,
+  "min": 18.22,
+  "max": 31.9,
+  "share_missing": 0.3822
+ },
+ "Floor6_z5_S1(RH%)": {
+  "rows": 689760,
+  "longest_constant_min": 23,
+  "min": 47.78,
+  "max": 82.6,
+  "share_missing": 0.3822
+ },
+ "Floor6_z5_S1(lux)": {
+  "rows": 689760,
+  "longest_constant_min": 863,
+  "min": 0.0,
+  "max": 73.0,
+  "share_missing": 0.3822
+ },
+ "Floor7_z1_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 126890,
+  "min": 0.0,
+  "max": 0.0,
+  "share_missing": 0.0061
+ },
+ "Floor7_z1_AC2(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 6208,
+  "min": 0.0,
+  "max": 2.51,
+  "share_missing": 0.0061
+ },
+ "Floor7_z1_AC3(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 3736,
+  "min": 0.0,
+  "max": 1.28,
+  "share_missing": 0.0061
+ },
+ "Floor7_z1_AC4(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 7893,
+  "min": 0.0,
+  "max": 49.99,
+  "share_missing": 0.0383
+ },
+ "Floor7_z1_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 603,
+  "min": 0.0,
+  "max": 5.72,
+  "share_missing": 0.0038
+ },
+ "Floor7_z1_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 178,
+  "min": 0.0,
+  "max": 3.38,
+  "share_missing": 0.0015
+ },
+ "Floor7_z1_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 58,
+  "min": 15.66,
+  "max": 33.9,
+  "share_missing": 0.3355
+ },
+ "Floor7_z1_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 22,
+  "min": 39.85,
+  "max": 86.23,
+  "share_missing": 0.3355
+ },
+ "Floor7_z1_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 1439,
+  "min": 0.0,
+  "max": 69.0,
+  "share_missing": 0.3356
+ },
+ "Floor7_z2_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 7893,
+  "min": 0.0,
+  "max": 58.13,
+  "share_missing": 0.0383
+ },
+ "Floor7_z2_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 5970,
+  "min": 0.0,
+  "max": 8.05,
+  "share_missing": 0.0038
+ },
+ "Floor7_z2_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 2425,
+  "min": 0.0,
+  "max": 1.37,
+  "share_missing": 0.0042
+ },
+ "Floor7_z2_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 58,
+  "min": 18.84,
+  "max": 33.9,
+  "share_missing": 0.3301
+ },
+ "Floor7_z2_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 18,
+  "min": 39.79,
+  "max": 86.9,
+  "share_missing": 0.3301
+ },
+ "Floor7_z2_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 813,
+  "min": 0.0,
+  "max": 53.0,
+  "share_missing": 0.3301
+ },
+ "Floor7_z3_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 2345,
+  "min": 0.0,
+  "max": 0.89,
+  "share_missing": 0.0028
+ },
+ "Floor7_z3_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 6208,
+  "min": 0.0,
+  "max": 1.12,
+  "share_missing": 0.0046
+ },
+ "Floor7_z4_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8085,
+  "min": 0.0,
+  "max": 59.22,
+  "share_missing": 0.0383
+ },
+ "Floor7_z4_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1986,
+  "min": 0.0,
+  "max": 12.35,
+  "share_missing": 0.0099
+ },
+ "Floor7_z4_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 6629,
+  "min": 0.0,
+  "max": 3.46,
+  "share_missing": 0.0061
+ },
+ "Floor7_z4_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 63,
+  "min": 17.53,
+  "max": 35.73,
+  "share_missing": 0.3415
+ },
+ "Floor7_z4_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 20,
+  "min": 37.62,
+  "max": 88.6,
+  "share_missing": 0.3415
+ },
+ "Floor7_z4_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 960,
+  "min": 0.0,
+  "max": 99.0,
+  "share_missing": 0.3416
+ },
+ "Floor7_z5_AC1(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 8085,
+  "min": 0.0,
+  "max": 53.34,
+  "share_missing": 0.0383
+ },
+ "Floor7_z5_Light(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 6208,
+  "min": 0.0,
+  "max": 13.09,
+  "share_missing": 0.0057
+ },
+ "Floor7_z5_Plug(kW)": {
+  "rows": 790560,
+  "longest_constant_min": 1093,
+  "min": 0.0,
+  "max": 2.17,
+  "share_missing": 0.0061
+ },
+ "Floor7_z5_S1(degC)": {
+  "rows": 790560,
+  "longest_constant_min": 49,
+  "min": 19.14,
+  "max": 34.4,
+  "share_missing": 0.3564
+ },
+ "Floor7_z5_S1(RH%)": {
+  "rows": 790560,
+  "longest_constant_min": 20,
+  "min": 37.14,
+  "max": 84.92,
+  "share_missing": 0.3564
+ },
+ "Floor7_z5_S1(lux)": {
+  "rows": 790560,
+  "longest_constant_min": 991,
+  "min": 0.0,
+  "max": 78.0,
+  "share_missing": 0.3564
+ }
+}

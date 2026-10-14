@@ -1,0 +1,31 @@
+2018Floor1.csv: 20552951 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135014)
+2018Floor2.csv: 41231957 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135016)
+2018Floor3.csv: 30189495 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135015)
+2018Floor4.csv: 31728415 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135015)
+2018Floor5.csv: 33624983 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135014)
+2018Floor6.csv: 34206724 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135015)
+2018Floor7.csv: 34463915 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135014)
+2019Floor1.csv: 40487855 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135020)
+2019Floor2.csv: 95782259 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135022)
+2019Floor3.csv: 77311428 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135019)
+2019Floor4.csv: 76454851 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135017)
+2019Floor5.csv: 75491946 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135020)
+2019Floor6.csv: 62710879 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135016)
+2019Floor7.csv: 78867512 bytes (attempt 1, final URL https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/2135021)
+2018Floor1.csv: 264960 rows, 11 columns, 2018-07-01 00:00:00 to 2018-12-31 23:59:00
+2018Floor2.csv: 264960 rows, 36 columns, 2018-07-01 00:00:00 to 2018-12-31 23:59:00
+2018Floor3.csv: 264960 rows, 29 columns, 2018-07-01 00:00:00 to 2018-12-31 23:59:00
+2018Floor4.csv: 264960 rows, 29 columns, 2018-07-01 00:00:00 to 2018-12-31 23:59:00
+2018Floor5.csv: 264960 rows, 29 columns, 2018-07-01 00:00:00 to 2018-12-31 23:59:00
+2018Floor6.csv: 264960 rows, 29 columns, 2018-07-01 00:00:00 to 2018-12-31 23:59:00
+2018Floor7.csv: 264960 rows, 29 columns, 2018-07-01 00:00:00 to 2018-12-31 23:59:00
+2019Floor1.csv: 525600 rows, 11 columns, 2019-01-01 00:00:00 to 2019-12-31 23:59:00
+2019Floor2.csv: 525600 rows, 36 columns, 2019-01-01 00:00:00 to 2019-12-31 23:59:00
+2019Floor3.csv: 525600 rows, 29 columns, 2019-01-01 00:00:00 to 2019-12-31 23:59:00
+2019Floor4.csv: 525600 rows, 29 columns, 2019-01-01 00:00:00 to 2019-12-31 23:59:00
+2019Floor5.csv: 525600 rows, 29 columns, 2019-01-01 00:00:00 to 2019-12-31 23:59:00
+2019Floor6.csv: 424800 rows, 29 columns, 2019-01-01 00:00:00 to 2019-10-22 23:59:00
+2019Floor7.csv: 525600 rows, 29 columns, 2019-01-01 00:00:00 to 2019-12-31 23:59:00
+5-min table: (158112, 192), 2018-07-01 00:00:00 to 2019-12-31 23:55:00
+ERA5: 13224 hours
+weather download failed: ValueError("Usecols do not match columns, columns expected but not found: ['DEW', 'TMP', 'DATE']")
