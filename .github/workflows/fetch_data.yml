@@ -1,0 +1,68 @@
+name: fetch data
+
+# Downloads the CU-BEMS building data (figshare) and Bangkok weather, condenses them with
+# tools/prepare_data.py and commits the result to data/. Runs when the script or this file changes,
+# or by hand from the Actions tab.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/fetch_data.yml", "tools/prepare_data.py"]
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pandas numpy
+      - name: Download CU-BEMS (figshare 11726517)
+        run: |
+          sudo apt-get install -y -q aria2
+          mkdir -p raw
+          cat > urls.txt <<'LIST'
+          https://ndownloader.figshare.com/files/21350142
+            out=2018Floor1.csv
+          https://ndownloader.figshare.com/files/21350166
+            out=2018Floor2.csv
+          https://ndownloader.figshare.com/files/21350151
+            out=2018Floor3.csv
+          https://ndownloader.figshare.com/files/21350157
+            out=2018Floor4.csv
+          https://ndownloader.figshare.com/files/21350148
+            out=2018Floor5.csv
+          https://ndownloader.figshare.com/files/21350154
+            out=2018Floor6.csv
+          https://ndownloader.figshare.com/files/21350145
+            out=2018Floor7.csv
+          https://ndownloader.figshare.com/files/21350208
+            out=2019Floor1.csv
+          https://ndownloader.figshare.com/files/21350226
+            out=2019Floor2.csv
+          https://ndownloader.figshare.com/files/21350193
+            out=2019Floor3.csv
+          https://ndownloader.figshare.com/files/21350172
+            out=2019Floor4.csv
+          https://ndownloader.figshare.com/files/21350205
+            out=2019Floor5.csv
+          https://ndownloader.figshare.com/files/21350169
+            out=2019Floor6.csv
+          https://ndownloader.figshare.com/files/21350217
+            out=2019Floor7.csv
+          LIST
+          aria2c -i urls.txt -d raw -j 7 -x 4 --max-tries=10 --retry-wait=10 --console-log-level=warn
+          ls -l raw
+      - run: python tools/prepare_data.py raw data
+      - name: Commit data
+        run: |
+          git config user.name "Malmand"
+          git config user.email "201303087+Malmand@users.noreply.github.com"
+          git add data
+          git commit -m "Add condensed CU-BEMS data and Bangkok weather" || exit 0
+          for i in 1 2 3; do git pull --rebase origin main && git push origin main && break; sleep 10; done
