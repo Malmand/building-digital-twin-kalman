@@ -28,4 +28,4 @@
 2019Floor7.csv: 525600 rows, 29 columns, 2019-01-01 00:00:00 to 2019-12-31 23:59:00
 5-min table: (158112, 192), 2018-07-01 00:00:00 to 2019-12-31 23:55:00
 ERA5: 13224 hours
-weather download failed: ValueError("Usecols do not match columns, columns expected but not found: ['DEW', 'TMP', 'DATE']")
+weather download failed: ValueError("Usecols do not match columns, columns expected but not found: ['DATE', 'TMP', 'DEW']")
