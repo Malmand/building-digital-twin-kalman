@@ -78,7 +78,7 @@ SPECS = {
 
 def continuous(spec: ModelSpec, p: dict):
     """Continuous-time A, B (inputs as in INPUTS)."""
-    p = {"eta": ETA_REF, **p}
+    p = {"eta": ETA_REF, **p}  # eta fixed: sets the scale
     if spec.states == ["Ti"]:
         A = np.array([[-1 / (p["Ci"] * p["Rio"])]])
         B = np.array([[1 / p["Rio"], -p["eta"], p["a_int"], p["a_sol"], p["q0"]]]) / p["Ci"]
@@ -105,7 +105,7 @@ def discretise(A, B, dt):
     nx, nu = B.shape
     M = np.zeros((nx + nu, nx + nu))
     M[:nx, :nx], M[:nx, nx:] = A, B
-    E = expm(M * dt)
+    E = expm(M * dt)  # exact ZOH: inputs constant over each step
     return E[:nx, :nx], E[:nx, nx:]
 
 
@@ -120,15 +120,15 @@ def _kf_loglik(Ad, Bd, Qd, r, U, Y, x0, P0):
     for k in range(Y.shape[0]):
         y = Y[k]
         if not np.isnan(y):
-            S = P[0, 0] + r
+            S = P[0, 0] + r  # innovation variance (Ti measured only)
             e = y - x[0]
             K = P[:, 0] / S
             x = x + K * e
             P = P - np.outer(K, P[0, :])
-            P = 0.5 * (P + P.T)
+            P = 0.5 * (P + P.T)  # keep P symmetric against round-off
             ll -= 0.5 * (np.log(2 * np.pi * S) + e * e / S)
             nobs += 1
-        x = Ad @ x + Bd @ U[k]
+        x = Ad @ x + Bd @ U[k]  # predict; missing y skips the update
         P = Ad @ P @ Ad.T + Qd
     return ll, nobs
 
@@ -159,14 +159,14 @@ class RCModel:
         p = p or self.p
         A, B = continuous(self.spec, p)
         Ad, Bd = discretise(A, B, self.dt)
-        Qd = np.diag([p[f"q_{s}"] for s in self.spec.states]) * self.dt
+        Qd = np.diag([p[f"q_{s}"] for s in self.spec.states]) * self.dt  # intensity x dt: first-order discretisation
         c = np.ascontiguousarray
         return c(Ad), c(Bd), c(Qd), p["r"]
 
     def loglik(self, U, Y, p=None):
         Ad, Bd, Qd, r = self.matrices(p)
         nx = len(self.spec.states)
-        y0 = Y[~np.isnan(Y)][0]
+        y0 = Y[~np.isnan(Y)][0]  # all states start at the first reading
         ll, _ = _kf_loglik(Ad, Bd, Qd, r, U, Y, np.full(nx, y0), np.eye(nx))
         return ll
 
@@ -180,12 +180,12 @@ class RCModel:
             try:
                 val = -self.loglik(U, Y, self._from_vec(v))
             except (np.linalg.LinAlgError, ValueError, OverflowError):
-                return 1e12
+                return 1e12  # unstable or singular trial point
             return val if np.isfinite(val) else 1e12
 
         for s in range(starts):
             b = self._bounds()
-            v = v0 + (rng.normal(0, 0.7, len(v0)) if s else 0)
+            v = v0 + (rng.normal(0, 0.7, len(v0)) if s else 0)  # first start: the guess itself
             v = np.clip(v, [lo for lo, _ in b], [hi for _, hi in b])
             res = minimize(nll, v, method="L-BFGS-B", bounds=b, options={"maxiter": maxiter})
             if best is None or res.fun < best.fun:
@@ -219,7 +219,7 @@ class RCModel:
     def time_constants_h(self):
         A, _ = continuous(self.spec, self.p)
         ev = np.linalg.eigvals(A).real
-        return sorted(-1 / ev)
+        return sorted(-1 / ev)  # tau = -1/eigenvalue (h)
 
     def simulate(self, U, x0):
         """Open-loop simulation (no measurements) from state x0; returns the states."""

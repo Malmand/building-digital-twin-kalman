@@ -33,7 +33,7 @@ def weather():
     idx = pd.date_range(w.index.min(), w.index.max(), freq=f"{DT_MIN}min")
     T = w["temperature_2m"].reindex(idx).interpolate(limit_area="inside")
     rad = w[["shortwave_radiation", "direct_radiation", "diffuse_radiation"]].copy()
-    rad.index = rad.index - pd.Timedelta("30min")
+    rad.index = rad.index - pd.Timedelta("30min")  # hourly means -> mid-hour
     rad = rad.reindex(rad.index.union(idx)).interpolate(limit_area="inside").reindex(idx).clip(lower=0)
     rh = w["relative_humidity_2m"].reindex(idx).interpolate(limit_area="inside")
     return pd.DataFrame({"T_out": T, "G": rad["shortwave_radiation"] / 1000, "G_dir": rad["direct_radiation"] / 1000,
@@ -48,7 +48,7 @@ def zones():
         if c.endswith("_S1(degC)"):
             floor, z = c.split("_")[:2]
             if any(k.startswith(f"{floor}_{z}_AC") for k in cols):
-                out.append(f"F{floor[5:]}{z}")
+                out.append(f"F{floor[5:]}{z}")  # 'Floor7', 'z1' -> 'F7z1'
     return out
 
 
@@ -63,6 +63,7 @@ def spikes(x, jump=1.0):
     within 10 min) is kept, because the temperature does not come back."""
     d_prev = x - x.shift(1)
     d_next = x - x.shift(-1)
+    # up then down (or down then up)
     bad = (d_prev.abs() > jump) & (d_next.abs() > jump) & (np.sign(d_prev) == np.sign(d_next))
     return x.mask(bad), int(bad.sum())
 
@@ -70,7 +71,7 @@ def spikes(x, jump=1.0):
 def frozen(x, min_steps=24):
     """Flag runs of identical values lasting at least min_steps (2 h at 5 min): a stuck sensor."""
     same = x.diff().eq(0)
-    grp = (~same).cumsum()
+    grp = (~same).cumsum()  # one group per run of equal values
     run = same.groupby(grp).transform("sum") + 1
     return run >= min_steps
 
@@ -85,7 +86,7 @@ def zone_frame(zone, start=None, end=None, clean=True, report=None):
         "Ti": t[f"{p}_S1(degC)"],
         "RH": t[f"{p}_S1(RH%)"],
         "lux": t[f"{p}_S1(lux)"],
-        "P_ac": t[ac].sum(axis=1, min_count=len(ac)),
+        "P_ac": t[ac].sum(axis=1, min_count=len(ac)),  # NaN if any unit missing
         "P_int": t[gains].sum(axis=1, min_count=len(gains)),
     })
     df = df.join(weather(), how="left")
@@ -95,7 +96,7 @@ def zone_frame(zone, start=None, end=None, clean=True, report=None):
         rep = report if report is not None else {}
         rep["rows"] = len(df)
         rep["Ti_missing"] = int(df["Ti"].isna().sum())
-        bad = (df["Ti"] < 12) | (df["Ti"] > 40)
+        bad = (df["Ti"] < 12) | (df["Ti"] > 40)  # physically implausible indoors
         rep["Ti_out_of_range"] = int(bad.sum())
         df.loc[bad, "Ti"] = np.nan
         fr = frozen(df["Ti"])

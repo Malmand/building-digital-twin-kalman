@@ -22,6 +22,7 @@ from twin.twin import DigitalTwin  # noqa: E402
 def main(n=20000):
     m = RCModel("M3")
     rng = np.random.default_rng(0)
+    # synthetic inputs: timing only
     U = np.c_[30 + rng.standard_normal(n), rng.uniform(0, 5, n), rng.uniform(0, 2, n), rng.uniform(0, 0.9, n), np.ones(n)]
     Y = 25 + 0.3 * rng.standard_normal(n)
 

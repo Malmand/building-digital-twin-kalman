@@ -27,7 +27,7 @@ TRAIN = ("2019-06-03", "2019-06-16 23:55")
 TEST = ("2019-06-17", "2019-06-30 23:55")
 HORIZONS = {1: "5min", 12: "1h", 36: "3h", 72: "6h"}
 OUT = Path(__file__).parent / "results"
-MIN_COVERAGE = 0.7
+MIN_COVERAGE = 0.7  # share of Ti readings required
 
 
 def run_zone(zone):
@@ -54,7 +54,7 @@ def run_zone(zone):
     for a, b in (("M1", "M2"), ("M2", "M3")):
         ra = next(r for r in rows if r["model"] == a)
         rb = next(r for r in rows if r["model"] == b)
-        stat = 2 * (ra["nll"] - rb["nll"])
+        stat = 2 * (ra["nll"] - rb["nll"])  # likelihood-ratio statistic, nested models
         rb[f"lr_p_vs_{a}"] = float(chi2.sf(stat, rb["n_params"] - ra["n_params"]))
     logging.info("%s done in %.0f s: 6 h RMSE %s", zone, time.time() - t0,
                  ", ".join(f"{r['model']} {r['rmse_6h']:.2f}" for r in rows))

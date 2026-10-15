@@ -33,12 +33,12 @@ def hstep_residuals(model, U, Y, h=36, stride=3, free_floating=False, p_off=0.1)
     from a twin with fixed parameters. With free_floating, only forecasts over which the
     air-conditioning stays off count (not used in the study: several zones run units at night)."""
     y0 = Y[~np.isnan(Y)][0]
-    tw = DigitalTwin(model, y0, track=False)
+    tw = DigitalTwin(model, y0, track=False)  # fixed twin: an offset cannot be absorbed
     z = np.full(len(Y), np.nan)
     for k in range(len(Y)):
         tw.step(Y[k], U[k])
         if k % stride == 0 and k + h < len(Y):
-            mean, std = tw.forecast(U[k + 1:k + h])
+            mean, std = tw.forecast(U[k + 1:k + h])  # mean[-1] is the forecast for k+h
             if not np.isnan(Y[k + h]) and (not free_floating or (U[k:k + h + 1, 1] < p_off).all()):
                 z[k + h] = (Y[k + h] - mean[-1]) / std[-1]
     return z
@@ -51,8 +51,8 @@ def cusum(z, drift=0.5, threshold=10.0, reset=True):
     alarms, sp, sn = [], np.zeros(len(z)), np.zeros(len(z))
     for k, v in enumerate(z):
         if not np.isnan(v):
-            gp = max(0.0, gp + v - drift)
-            gn = max(0.0, gn - v - drift)
+            gp = max(0.0, gp + v - drift)  # upward shift
+            gn = max(0.0, gn - v - drift)  # downward shift
             if gp > threshold or gn > threshold:
                 alarms.append(k)
                 if reset:
@@ -82,7 +82,7 @@ def cooling(kappa, P_ac, limit=0.8, window=288, min_on_steps=24, p_on=0.5):
     `min_on_steps` (2 h) of operation are needed for a verdict."""
     on = P_ac > p_on
     alarms = []
-    for k in range(window, len(kappa), 12):
+    for k in range(window, len(kappa), 12):  # check every hour
         sl = slice(k - window, k)
         if on[sl].sum() >= min_on_steps and np.mean(kappa[sl][on[sl]]) < limit:
             alarms.append(k)

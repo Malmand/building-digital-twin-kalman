@@ -44,7 +44,7 @@ def loglik(model, df, q_kappa, q_dq, tau):
         o = tw.run(U[a:b], Y[a:b])
         e, z = o["innov"], o["z"]
         ok = ~np.isnan(e) & (np.abs(z) > 0)
-        S = (e[ok] / z[ok]) ** 2
+        S = (e[ok] / z[ok]) ** 2  # innovation variance from e and z
         ll += -0.5 * np.sum(np.log(2 * np.pi * S) + z[ok] ** 2)
     return ll
 
@@ -52,6 +52,7 @@ def loglik(model, df, q_kappa, q_dq, tau):
 def run_zone(zone):
     model = load_model(zone)
     tr = D.zone_frame(zone, *TRAIN)
+    # ML grid search on the training fortnight
     grid = {g: loglik(model, tr, *g) for g in itertools.product(GRID_KAPPA, GRID_DQ, GRID_TAU)}
     qk, qd, tau = max(grid, key=grid.get)
     df = D.zone_frame(zone, *PERIOD)

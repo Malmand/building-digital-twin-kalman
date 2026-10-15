@@ -35,7 +35,7 @@ def dataset(zone, model, period, h):
     o = run_twin(model, df, track=False, horizons=(h,), stride=3)
     tgt = o.index[o[f"fc{h}"].notna() & o["Ti"].notna()]
     pos = df.index.get_indexer(tgt)
-    org = pos - h
+    org = pos - h  # forecast origin for each target
     X = pd.DataFrame({
         "Ti_now": df["Ti"].to_numpy()[org],
         "Ti_filt_now": o["Ti_f"].to_numpy()[org],
@@ -61,9 +61,10 @@ def run_zone(zone):
         Xte, yte = dataset(zone, model, TEST, h)
         if len(Xtr) < 500 or len(Xte) < 500:
             continue
+        # no twin outputs for ML only
         feats_ml = [c for c in Xtr.columns if c != "twin_forecast" and c != "Ti_filt_now"]
         gb = dict(max_iter=300, learning_rate=0.05, max_leaf_nodes=31, l2_regularization=1.0, random_state=0)
-        res = HistGradientBoostingRegressor(**gb).fit(Xtr, ytr - Xtr["twin_forecast"])
+        res = HistGradientBoostingRegressor(**gb).fit(Xtr, ytr - Xtr["twin_forecast"])  # learn the twin's residual
         hyb = Xte["twin_forecast"] + res.predict(Xte)
         ml = HistGradientBoostingRegressor(**gb).fit(Xtr[feats_ml], ytr).predict(Xte[feats_ml])
         persist = Xte["Ti_now"].to_numpy()

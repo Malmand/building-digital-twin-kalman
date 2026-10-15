@@ -28,5 +28,5 @@ for name, fid in FILES.items():
             print(f"{name}: attempt {attempt}: HTTP {e.code} {e.reason}; headers {dict(e.headers)}", flush=True)
         except Exception as e:                     # noqa: BLE001
             print(f"{name}: attempt {attempt}: {e!r}", flush=True)
-        time.sleep(15 * attempt)
+        time.sleep(15 * attempt)  # linear back-off
     time.sleep(3)

@@ -45,16 +45,17 @@ class DigitalTwin:
         _, b_air = discretise(A, e, model.dt)
         self.b_air = b_air[:, 0]
         self.track = track
+        # AR(1) decay of dq; 1 = random walk
         self.phi = float(np.exp(-model.dt / dq_tau_h)) if np.isfinite(dq_tau_h) else 1.0
         n = nx + 2
-        self.x = np.r_[np.full(nx, Ti0), 1.0, 0.0]
-        self.P = np.diag(np.r_[np.full(nx, 1.0), 0.01, 1.0])
+        self.x = np.r_[np.full(nx, Ti0), 1.0, 0.0]  # states, kappa = 1, dq = 0
+        self.P = np.diag(np.r_[np.full(nx, 1.0), 0.01, 1.0])  # kappa prior sd 0.1
         self.Q = np.zeros((n, n))
         self.Q[:nx, :nx] = Qd
         if track:
             self.Q[nx, nx], self.Q[nx + 1, nx + 1] = q_kappa, q_dq
         else:
-            self.P[nx:, nx:] = 0.0
+            self.P[nx:, nx:] = 0.0  # fixed twin: kappa and dq frozen
         self.C = np.zeros(n)
         self.C[0] = 1.0
 
@@ -62,14 +63,14 @@ class DigitalTwin:
     def _f(self, z, u):
         x, kappa, dq = z[:self.nx], z[self.nx], z[self.nx + 1]
         uu = u.copy()
-        uu[1] = kappa * u[1]
+        uu[1] = kappa * u[1]  # kappa scales the cooling input
         return np.r_[self.Ad @ x + self.Bd @ uu + self.b_air * dq, kappa, self.phi * dq]
 
     def _F(self, z, u):
         n = self.nx + 2
         J = np.eye(n)
         J[:self.nx, :self.nx] = self.Ad
-        J[:self.nx, self.nx] = self.Bd[:, 1] * u[1]
+        J[:self.nx, self.nx] = self.Bd[:, 1] * u[1]  # d(next state)/d(kappa)
         J[:self.nx, self.nx + 1] = self.b_air
         J[self.nx + 1, self.nx + 1] = self.phi
         return J
@@ -83,7 +84,7 @@ class DigitalTwin:
         K = self.P[:, 0] / S
         self.x = self.x + K * e
         IKC = np.eye(len(self.x)) - np.outer(K, self.C)
-        self.P = IKC @ self.P @ IKC.T + self.r * np.outer(K, K)
+        self.P = IKC @ self.P @ IKC.T + self.r * np.outer(K, K)  # Joseph form
         return e, S
 
     def predict(self, u):
@@ -116,7 +117,7 @@ class DigitalTwin:
             if extra_heat is not None:
                 x[:self.nx] += self.b_air * extra_heat[k]
             P = J @ P @ J.T + self.Q
-            mean[k], std[k] = x[0], np.sqrt(P[0, 0] + self.r)
+            mean[k], std[k] = x[0], np.sqrt(P[0, 0] + self.r)  # predictive sd includes sensor noise
         return mean, std
 
     def state(self):

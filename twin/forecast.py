@@ -23,7 +23,7 @@ def kstep_errors(model, U, Y, horizons=(1, 12, 36, 72), stride=3, res=None):
     for k in range(0, len(Y) - H, stride):
         x = res.x_filt[k].copy()
         for j in range(1, H + 1):
-            x = Ad @ x + Bd @ U[k + j - 1]
+            x = Ad @ x + Bd @ U[k + j - 1]  # open loop from the filtered state
             if j in out and not np.isnan(Y[k + j]):
                 out[j].append(Y[k + j] - x[0])
     return {h: np.array(v) for h, v in out.items()}
@@ -37,4 +37,4 @@ def acf(x, lags=36):
     x = x[~np.isnan(x)]
     x = x - x.mean()
     d = np.dot(x, x)
-    return np.array([np.dot(x[:-k or None], x[k:]) / d for k in range(lags + 1)])
+    return np.array([np.dot(x[:-k or None], x[k:]) / d for k in range(lags + 1)])  # x[:-0] would be empty

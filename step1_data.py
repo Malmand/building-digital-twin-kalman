@@ -25,7 +25,7 @@ def main():
     for z in D.zones():
         rep = {}
         df = D.zone_frame(z, *PERIOD, report=rep)
-        occ = (df.index.hour >= 8) & (df.index.hour < 18) & (df.index.dayofweek < 5)
+        occ = (df.index.hour >= 8) & (df.index.hour < 18) & (df.index.dayofweek < 5)  # office hours
         rows.append(dict(zone=z, **rep, Ti_available=round(df["Ti"].notna().mean(), 3),
                          Ti_mean_occupied=round(df.loc[occ, "Ti"].mean(), 2),
                          P_ac_mean_occupied_kW=round(df.loc[occ, "P_ac"].mean(), 2),
@@ -39,7 +39,7 @@ def main():
     cs = pvlib.location.Location(13.7384, 100.5327, tz="Asia/Bangkok").get_clearsky(
         w.index.tz_localize("Asia/Bangkok"))["ghi"].to_numpy() / 1000
     lags = range(-12, 13)
-    corr = [np.corrcoef(np.roll(w["G"].to_numpy(), k)[24:-24], cs[24:-24])[0, 1] for k in lags]
+    corr = [np.corrcoef(np.roll(w["G"].to_numpy(), k)[24:-24], cs[24:-24])[0, 1] for k in lags]  # trim the wrapped ends
     best = list(lags)[int(np.argmax(corr))] * D.DT_MIN
     checks = dict(
         irradiance_best_shift_min=best,

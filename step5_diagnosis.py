@@ -38,7 +38,7 @@ CUSUM_GRID = (5, 8, 10, 15, 20, 30, 40, 60)
 CUSUM_DRIFT = 1.0        # half of a 2-sigma shift: tuned to offsets of about 1 K
 FAULTS = {"bias 1 K": 2 * 288, "bias 2 K": 2 * 288, "drift": 4 * 288, "frozen": 72, "cooling": 10 * 288}  # windows (steps)
 DETECTOR = {"bias 1 K": "cusum", "bias 2 K": "cusum", "drift": "cusum", "frozen": "frozen", "cooling": "cooling"}
-WARMUP = 7 * 288
+WARMUP = 7 * 288  # one week to settle the twin
 
 
 def settings(zone):
@@ -93,7 +93,7 @@ def inject(kind, U, Y, k0):
         last = Y[k0 - 1]
         Y[k0:k0 + 72] = last
     elif kind == "cooling":
-        U[k0:, 1] /= 0.7
+        U[k0:, 1] /= 0.7  # same heat removed, 1/0.7 more power
     return U, Y
 
 
@@ -105,7 +105,7 @@ def run_zone(args):
     cusum_h = CUSUM_GRID[-1]
     for h in CUSUM_GRID:
         c, days = alarm_rate(model, tune, qk, qd, tau, h)
-        if days > 0 and c["cusum"] / days * 30 <= 1.0:
+        if days > 0 and c["cusum"] / days * 30 <= 1.0:  # lowest threshold with <= 1 alarm per 30 days
             cusum_h = h
             break
     test = D.zone_frame(zone, *TEST)
@@ -120,6 +120,7 @@ def run_zone(args):
     rows = []
     for kind, win in FAULTS.items():
         cands = [k for k in range(WARMUP, len(Y) - win)
+                 # onsets at 10:00 on weekdays
                  if idx[k].hour == 10 and idx[k].minute == 0 and idx[k].dayofweek < 5
                  and ok[k - WARMUP:k + win].all() and np.mean(~np.isnan(Y[k - WARMUP:k + win])) > 0.9]
         for k0 in rng.choice(cands, size=min(n_inj, len(cands)), replace=False) if cands else []:

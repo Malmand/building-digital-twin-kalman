@@ -49,7 +49,7 @@ class KalmanFilter:
         if np.isnan(y):
             return np.nan, S
         e = y - (self.C @ self.x).item()
-        K = (self.P @ self.C.T).ravel() / S
+        K = (self.P @ self.C.T).ravel() / S  # Kalman gain
         self.x = self.x + K * e
         # Joseph form: keeps P symmetric and positive definite over long runs
         I_KC = np.eye(len(self.x)) - np.outer(K, self.C)
@@ -80,7 +80,7 @@ def rts_smoother(res: FilterResult, A):
     n = len(res.x_filt)
     xs, Ps = res.x_filt.copy(), res.P_filt.copy()
     for k in range(n - 2, -1, -1):
-        G = res.P_filt[k] @ A.T @ np.linalg.inv(res.P_pred[k + 1])
+        G = res.P_filt[k] @ A.T @ np.linalg.inv(res.P_pred[k + 1])  # smoother gain
         xs[k] = res.x_filt[k] + G @ (xs[k + 1] - res.x_pred[k + 1])
         Ps[k] = res.P_filt[k] + G @ (Ps[k + 1] - res.P_pred[k + 1]) @ G.T
     return xs, Ps
@@ -101,7 +101,7 @@ class ExtendedKalmanFilter:
         self.P = np.asarray(P0, float).copy()
 
     def predict(self, u):
-        J = self.F(self.x, u)
+        J = self.F(self.x, u)  # Jacobian at the prior state
         self.x = self.f(self.x, u)
         self.P = J @ self.P @ J.T + self.Q
 

@@ -86,6 +86,7 @@ def condense(raw, out):
         floor = name[4:].replace(".csv", "")              # Floor1 ... Floor7
         df = df.apply(pd.to_numeric, errors="coerce")
         df.columns = [f"{floor}_{c}" for c in df.columns]
+        # regular 1-min index: gaps become NaN
         full = pd.date_range(df.index.min().floor("D"), df.index.max().ceil("D") - pd.Timedelta("1min"), freq="1min")
         df = df.reindex(full)
         for c in df.columns:
@@ -144,7 +145,9 @@ def weather(out):
                 continue
             d = pd.read_csv(io.StringIO(txt), usecols=["DATE", "TMP", "DEW"], dtype=str)
             t = d["TMP"].str.split(",", expand=True)
+            # ISD quality codes passed; +9999 = missing
             ok = t[1].isin(["1", "5", "A", "C", "I", "M", "P", "R", "U"]) & (t[0] != "+9999")
+            # tenths of degC
             d = pd.DataFrame({"time_utc": pd.to_datetime(d["DATE"]), "T_air": t[0].astype(float) / 10})[ok]
             d["station"] = sname
             rows.append(d)

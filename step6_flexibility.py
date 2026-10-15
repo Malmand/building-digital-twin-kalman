@@ -30,7 +30,7 @@ from twin.twin import DigitalTwin
 
 OUT = Path(__file__).parent / "results"
 PERIOD = ("2019-07-01", "2019-12-31 23:55")
-WARMUP = 3 * 288
+WARMUP = 3 * 288  # three days
 CHECK = {3: "15min", 6: "30min", 12: "1h", 24: "2h"}
 T_LIMIT = 26.0
 SCEN = {"off 30 min": (6, 0.0), "off 60 min": (12, 0.0), "off 120 min": (24, 0.0), "half power 120 min": (24, 0.5)}
@@ -82,20 +82,21 @@ def run_zone(zone):
                                     measured_rise=y - y_start, predicted_rise=mean[j - 1] - y_start,
                                     error=y - mean[j - 1], inside95=abs(y - mean[j - 1]) <= 1.96 * std[j - 1]))
             t = idx[k]
+            # weekday 14:00 with units running
             if t.hour == 14 and t.minute == 0 and t.dayofweek < 5 and U[k:k + 24, 1].mean() > 1.0:
                 base, base_sd = tw.forecast(U[k:k + EVAL])
                 for name, (dur, frac) in SCEN.items():
                     Us = U[k:k + EVAL].copy()
                     Us[:dur, 1] *= frac
                     m, sd = tw.forecast(Us)
-                    p_exceed = norm.sf(T_LIMIT, loc=m, scale=sd)
+                    p_exceed = norm.sf(T_LIMIT, loc=m, scale=sd)  # Gaussian forecast assumed
                     scen.append(dict(zone=zone, day=str(t.date()), scenario=name,
                                      shed_kWh=float((U[k:k + dur, 1] - Us[:dur, 1]).sum() * D.DT_H),
                                      shed_kW_mean=float((U[k:k + dur, 1] - Us[:dur, 1]).mean()),
                                      T_start=float(tw.x[0]), max_extra_rise=float(np.max(m - base)),
                                      T_peak=float(np.max(m)), p_exceed_max=float(np.max(p_exceed)),
                                      base_p_exceed_max=float(np.max(norm.sf(T_LIMIT, loc=base, scale=base_sd)))))
-            tw.step(Y[k], U[k])
+            tw.step(Y[k], U[k])  # assimilate k only after both checks
     logging.info("%s: %d shut-off events, %d scenario days", zone, len({v['start'] for v in val}),
                  len({s['day'] for s in scen}))
     return val, scen

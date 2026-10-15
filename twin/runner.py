@@ -30,7 +30,7 @@ def load_model(zone, key=None):
 def segments(ok, min_len=288):
     """Start/end indices of runs where the inputs are complete (at least one day long)."""
     ok = np.asarray(ok, bool)
-    edges = np.flatnonzero(np.diff(np.r_[0, ok.astype(int), 0]))
+    edges = np.flatnonzero(np.diff(np.r_[0, ok.astype(int), 0]))  # run starts and ends
     return [(a, b) for a, b in zip(edges[::2], edges[1::2]) if b - a >= min_len]
 
 
@@ -46,6 +46,7 @@ def run_twin(model, df, track=True, q_kappa=1e-6, q_dq=0.02, dq_tau_h=4.0, horiz
         y0 = Y[a:b][~np.isnan(Y[a:b])]
         if not len(y0):
             continue
+        # restart after each gap
         tw = DigitalTwin(model, y0[0], q_kappa=q_kappa, q_dq=q_dq, dq_tau_h=dq_tau_h, track=track)
         for k in range(a, b):
             o = tw.step(Y[k], U[k])
@@ -55,7 +56,7 @@ def run_twin(model, df, track=True, q_kappa=1e-6, q_dq=0.02, dq_tau_h=4.0, horiz
                 # information up to and including Y[k]; the state now predicts k+1, and the
                 # planned inputs U[k+1:] carry the forecast further
                 mean, std = tw.forecast(U[k + 1:k + H])
-                mean = np.r_[tw.x[0], mean]
+                mean = np.r_[tw.x[0], mean]  # prepend the 1-step prediction
                 std = np.r_[np.sqrt(tw.P[0, 0] + tw.r), std]
                 for h in horizons:
                     fc[h][0][k + h], fc[h][1][k + h] = mean[h - 1], std[h - 1]
