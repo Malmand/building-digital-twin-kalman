@@ -1,0 +1,13 @@
+{
+ "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+ "processor": "x86_64",
+ "python": "3.13.16",
+ "model": "M3 (3 states + 2 tracked parameters)",
+ "step_us": 46.8,
+ "forecast_6h_ms": 1.75,
+ "state_bytes": 696,
+ "python_heap_after_init_kB": 2.1,
+ "python_heap_peak_while_running_kB": 8.5,
+ "steps_per_day": 288,
+ "cpu_seconds_per_zone_day": 0.056
+}

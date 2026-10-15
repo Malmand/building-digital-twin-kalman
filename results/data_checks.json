@@ -1,0 +1,24 @@
+{
+ "irradiance_best_shift_min": 10,
+ "irradiance_corr_at_best": 0.944,
+ "T_out_range": [
+  16.7,
+  38.8
+ ],
+ "zones": 23,
+ "period": [
+  "2019-04-01",
+  "2019-12-31 23:55"
+ ],
+ "Ti_available_median": 0.956,
+ "cleaning_totals": {
+  "Ti_missing": 202051,
+  "Ti_out_of_range": 146,
+  "Ti_frozen": 24,
+  "Ti_spikes": 5,
+  "P_ac_negative": 0,
+  "P_ac_missing": 105911,
+  "P_int_negative": 0,
+  "P_int_missing": 100402
+ }
+}
